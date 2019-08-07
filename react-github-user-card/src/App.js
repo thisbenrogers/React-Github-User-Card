@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Container, Card } from 'semantic-ui-react';
 
 import User from './components/User';
 import FollowerList from './components/FollowerList';
@@ -46,8 +47,17 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>React Github User Card</h1>
-        <User userData={this.state.user} />
-        <FollowerList followers={this.state.followers} />
+        <Container className="user">
+          <Card.Group centered>
+            <User userData={this.state.user} />
+          </Card.Group>
+        </Container>
+        <h2>Followed By: </h2>
+        <Container className="followers">
+          <Card.Group>
+            <FollowerList followers={this.state.followers} />
+          </Card.Group>
+        </Container>
       </div>
     );
   }
