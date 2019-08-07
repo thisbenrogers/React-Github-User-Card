@@ -1,24 +1,22 @@
 import React from 'react';
 
-class FollowerList extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+import Follower from './Follower';
 
-  render() {
-    return <p>FollowerList</p>
-  }
+const FollowerList = props => {
+
+  return (
+    <>
+      <h2>Followed By: </h2>
+      {props.followers.map(follower => {
+        return <Follower key={follower.id} follower={follower} />
+      })}
+    </>
+  )
 }
 
 export default FollowerList;
 
 
-
-
-
-// response.data.forEach(follower => {
-//   this.getFollowerData(follower.login);
-// })
 
 // getFollowerData = follower => {
 //   axios.get(`https://api.github.com/users/${follower}`)

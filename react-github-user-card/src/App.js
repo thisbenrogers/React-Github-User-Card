@@ -11,7 +11,8 @@ class App extends React.Component {
     super();
     this.state = {
       user: {},
-      followers: []
+      followers: [],
+      follower: {}
     };
   }
 
@@ -46,7 +47,7 @@ class App extends React.Component {
       <div className="App">
         <h1>React Github User Card</h1>
         <User userData={this.state.user} />
-        <FollowerList />
+        <FollowerList followers={this.state.followers} />
       </div>
     );
   }
